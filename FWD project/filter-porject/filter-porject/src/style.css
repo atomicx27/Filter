@@ -1,0 +1,22 @@
+h1{
+  color: Black;
+  font-family: Verdana;
+  margin: 20px;
+}
+h2{
+  color: Black;
+  font-family: Verdana;
+  margin: 20px;
+}
+body {
+  background-color: red;
+}
+canvas {
+  border: 5px solid;
+  width: 750px;
+ }
+input {
+  font-size: 12pt;
+  background-color: olive;
+  font-family: Verdana;
+  }

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1 {font-family: "Montserrat", sans-serif}
+img {margin-bottom: -7px}
+.w3-row-padding img {margin-bottom: 12px}
+body{
+    background-color: black;
+}
+h1{
+    color: white;
+}
+p{
+    color: white;
+}
+    
+</style>
+</head>
+<body>
+    <h1 style="font-size: 100px">Online filter</h1>
+    <p style="font-size: 25px;">This is a web page wich will help you to add filters to your project<br>This Online filter will help you add red,blue,blurand rainbow filter</p>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+<!-- Header -->
+<div class="w3-opacity">
+<div class="w3-clear"></div>
+<header class="w3-center w3-margin-bottom">
+  <h1><b>Examples</b></h1> 
+  <p class="w3-padding-16"><button class="w3-button w3-black" onclick="myFunction()">Toggle Grid Padding</button></p>
+</header>
+</div>
+
+<!-- Photo Grid -->
+<div class="w3-row" id="myGrid" style="margin-bottom:128px">
+  <div class="w3-third">
+    <img src="pic1.jpg" style="width:100%">
+    <img src="pic2.jpg" style="width:100%">
+
+  </div>
+
+  <div class="w3-third">
+    <img src="pic1-gray.png" style="width:100%">
+    <img src="pic2-blur.png" style="width:100%">
+
+  </div>
+
+  <div class="w3-third">
+    <img src="pic1_red.png" style="width:100%">
+    <img src="pic2-rainbow.png" style="width:100%">
+  </div>
+</div>
+
+<!-- End Page Content -->
+</div>
+
+ 
+<script>
+// Toggle grid padding
+function myFunction() {
+  var x = document.getElementById("myGrid");
+  if (x.className === "w3-row") {
+    x.className = "w3-row-padding";
+  } else { 
+    x.className = x.className.replace("w3-row-padding", "w3-row");
+  }
+}
+
+</script>
+
+</body>
+<script>
+    function ValidateContactForm()
+    {
+        var name = document.ContactForm.Name;
+        var email = document.ContactForm.Email;
+        var phone = document.ContactForm.Telephone;
+        var nocall = document.ContactForm.DoNotCall;
+        var what = document.ContactForm.Subject;
+    
+        if (name.value == "")
+        {
+            window.alert("Please enter your name.");
+            name.focus();
+            return false;
+        }
+        
+        if (email.value == "")
+        {
+            window.alert("Please enter a valid e-mail address.");
+            email.focus();
+            return false;
+        }
+        if (email.value.indexOf("@", 0) < 0)
+        {
+            window.alert("Please enter a valid e-mail address.");
+            email.focus();
+            return false;
+        }
+        if (email.value.indexOf(".", 0) < 0)
+        {
+            window.alert("Please enter a valid e-mail address.");
+            email.focus();
+            return false;
+        }
+    
+        if ((nocall.checked == false) && (phone.value == ""))
+        {
+            window.alert("Please enter your telephone number.");
+            phone.focus();
+            return false;
+        }
+    
+        
+    }
+    
+    function EnableDisable(chkbx)
+    {
+        if(chkbx.checked == true)
+        {
+            document.ContactForm.Telephone.disabled = true;
+        }
+        else
+        {
+            document.ContactForm.Telephone.disabled = false;
+        }
+    }
+    </script>
+    </head>
+    
+    <body>
+        <h1> Sign up</h1>
+
+    <form method="get" action="filter.html" 
+    name="ContactForm" onsubmit="return ValidateContactForm();">
+        <p>Name: <input type="text" size="65" name="Name"></p>
+        <p>E-mail Address:  <input type="text" size="65" name="Email"></p>
+        <p>Telephone: <input type="text" size="65" name="Telephone"><br>
+            <input type="checkbox" name="DoNotCall" 
+            onclick="EnableDisable(this);"> Please do not call me.</p>
+        <p><input type="submit" value="login" name="submit">
+        <input type="reset" value="Reset" name="reset"></p>
+    </form>
+    
+    </body>
+
+
+</html>
